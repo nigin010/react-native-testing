@@ -1,11 +1,18 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, { useState } from 'react';
 import {TouchableOpacity, View, StyleSheet, Text} from 'react-native';
 
 const ButtonComponent = () => {
+
+  const [count, setCount] = useState<number>(0);
+
+  const onPress = () => {
+    setCount(prevCount => prevCount + 1);
+    console.log("You Have Clicked " + count + " Times!")
+  }
   return (
     <View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
         <Text>LOGIN</Text>
       </TouchableOpacity>
     </View>
@@ -17,8 +24,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#24a0ed',
     padding: 10,
-    margin: 11,
-    width: 300,
+    margin: 20,
+    // width: 380,
   },
 });
 
