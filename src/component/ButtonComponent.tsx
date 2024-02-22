@@ -12,7 +12,7 @@ const ButtonComponent = () => {
   const onPress = () => {
     setCount(prevCount => prevCount + 1);
     console.log("You Have Clicked " + count + " Times!")
-    navigation.navigate('LandingPage', {});
+    navigation.navigate('LandingBottomNav', {});
   };
   return (
     <View>
